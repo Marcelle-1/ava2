@@ -7,6 +7,31 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  //Variaveis Goblais
+  peso!: string;
+  altura!: string;
+  resultado!: string;
+
+  constructor(){}
+
+  calcular(){
+
+    //variáveis locais
+    let p = parseFloat(this.peso);
+    let a = parseFloat(this.altura);
+
+    let imc= p / (a * a);
+
+    let result;
+
+    if (imc < 18.5) {
+      result = "Abaixo do peso";
+    } else if(imc < 25) {
+      result = "Peso normal";
+    } else {
+      result ="Acima do peso";
+    }
+      this.resultado = result;
+  }
 
 }
